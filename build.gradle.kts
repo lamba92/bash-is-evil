@@ -1,5 +1,10 @@
 plugins {
     kotlin("jvm") version "1.5.10"
+    application
+}
+
+application {
+    mainClass.set("com.github.lamba92.evilbash.MainKt")
 }
 
 group = "com.github.lamba92"
