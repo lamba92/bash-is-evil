@@ -6,8 +6,10 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
 
-fun main() {
+fun main(): Unit = runBlocking {
     embeddedServer(CIO, port = 8081) {
         routing {
             get("/") {
@@ -15,5 +17,5 @@ fun main() {
                 call.respondText("Hello Kotland!")
             }
         }
-    }.start(true)
+    }.start()
 }

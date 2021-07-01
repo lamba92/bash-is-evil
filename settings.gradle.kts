@@ -1,2 +1,2 @@
-rootProject.name = "bad-bash-kotland"
+rootProject.name = "evil-bash-kotland"
 

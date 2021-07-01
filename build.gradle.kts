@@ -1,21 +1,15 @@
 plugins {
-    kotlin("jvm") version "1.5.10"
-    application
-}
-
-application {
-    mainClass.set("com.github.lamba92.evilbash.MainKt")
+    kotlin("jvm") version "1.5.20"
 }
 
 group = "com.github.lamba92"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-server-cio:1.6.0")
+    implementation("io.ktor:ktor-server-cio:1.6.1")
     implementation("ch.qos.logback:logback-classic:1.2.3")
 }
