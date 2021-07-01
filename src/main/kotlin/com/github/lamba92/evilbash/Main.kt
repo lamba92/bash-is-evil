@@ -6,7 +6,6 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 
 fun main(): Unit = runBlocking {
