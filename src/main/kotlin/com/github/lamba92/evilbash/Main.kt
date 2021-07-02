@@ -13,7 +13,7 @@ fun main(): Unit = runBlocking {
         routing {
             get("/") {
                 println("Hello ${call.request.origin.host}!")
-                call.respondText("Hello Kotland!")
+                call.respondText("Hello Kotland and world!")
             }
         }
     }.start()
