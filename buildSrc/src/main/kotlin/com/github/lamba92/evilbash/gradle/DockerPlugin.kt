@@ -28,7 +28,7 @@ class DockerPlugin : Plugin<Project> {
                     into("$buildDir/docker/${data.name}")
                 }
 
-                val imageTage = "${data.imageName.toLowerCase()}:${data.version}"
+                val imageTag = "${data.imageName.toLowerCase()}:${data.version}"
                 val dockerBuild = tasks.register<Exec>("docker${capitalizedName}Build") {
                     dependsOn(dockerPrepare)
                     group = "docker"
@@ -38,7 +38,7 @@ class DockerPlugin : Plugin<Project> {
                         data.buildArgs.forEach { (key, value) ->
                             addAll("--build-arg", "$key=$value")
                         }
-                        addAll("-t", imageTage)
+                        addAll("-t", imageTag)
                         add(dockerPrepare.get().destinationDir.absolutePath)
                     })
                 }
@@ -62,7 +62,7 @@ class DockerPlugin : Plugin<Project> {
                         data.containerName,
                         "-p",
                         "8081:8081",
-                        data.imageName
+                        imageTag
                     ))
                 }
             }
